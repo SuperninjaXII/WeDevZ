@@ -54,10 +54,12 @@ body {
   width: 32vw;
   height: 80vh;
   margin: auto;
-  background: $green;
+
   z-index: 3;
 
   video {
+    width:32vw;
+    height: 80vh;
     aspect-ratio: 1/2;
     margin: auto;
     filter: greyscale(100%);

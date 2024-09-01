@@ -45,7 +45,8 @@ body {
 .loading-screen div {
   overflow: hidden;
   width: 32vw;
-  height: 60vh;
+  height: 80vh;
+  margin: auto;
   background: $green;
   z-index: 3;
 
@@ -68,6 +69,20 @@ body {
   background-size: cover;
   opacity: 0.15;
   z-index: 5;
+}
+
+.into-text {
+  position: fixed;
+  width: 50svw;
+  height: 50svh;
+  bottom: 50svh;
+  z-index: 7;
+  background: #fff;
+
+}
+
+p {
+  font-size: 1rem;
 }
 
 .warning {

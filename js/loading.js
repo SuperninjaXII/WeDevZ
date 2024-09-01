@@ -67,7 +67,7 @@ const update = () => {
     secondScreen,
     { y: secondScreenHeight },
     {
-      y: secondScreenHeight , // Animate slightly to add effect
+      y: secondScreenHeight, // Animate slightly to add effect
       duration: 1,
     }
   );
@@ -85,3 +85,34 @@ const loop = () => {
 };
 
 loop();
+// Wait for the window to fully load
+window.addEventListener('load', function() {
+  // Hide the loading overlay
+  const loadingOverlay = document.getElementById('loadingOverlay');
+  loadingOverlay.style.display = 'none';
+
+  // Show the page content
+  const content = document.querySelector('.loading-screen');
+  content.style.display = 'flex';
+});
+let sound = false;
+let Onicon = document.querySelector('#Onicon');
+let Officon = document.querySelector("#Officon");
+
+playSound = () => {
+  const audio = document.getElementById('sound');
+  Onicon.classList.toggle("hide");
+  Officon.classList.toggle("hide");
+
+  if (sound) {
+    sound = false;
+    audio.pause();  // Use pause() to stop the audio
+    audio.currentTime = 0; // Reset audio to the beginning
+  } else {
+    sound = true;
+    audio.play();
+  }
+};
+
+Onicon.addEventListener("click", playSound);
+Officon.addEventListener("click", playSound);

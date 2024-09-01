@@ -8,8 +8,15 @@ body {
   background: #0D1B1E;
 }
 
+#loadingOverlay {
+  width: 100svw;
+  height: 100svh;
+  z-index: 99;
+  background: #fff;
+}
+
 .loading-screen {
-  display: flex;
+  display: none;
   position: fixed;
   flex-direction: column;
   justify-content: space-evenly;
@@ -66,11 +73,16 @@ body {
 
 .sub {
   position: fixed;
-  width: 100svw;
+  width: 30svw;
   height: 5svh;
-  bottom: 90svh;
+  bottom: 95svh;
+  left: 35svw;
   z-index: 4;
-  background: rgba(0, 0, 0, 0.5);
+  background: #fff;
+}
+
+.hide {
+  display: none;
 }
 
 p {
@@ -151,6 +163,25 @@ p {
   .pitch p {
     line-height: 2.5rem;
     font-size: 2.4rem;
+  }
+}
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+  clip-path: inset(0 100% 0 0);
+  animation: l5 2s steps(11) infinite;
+}
+
+.loader:before {
+  content: "Loading...";
+}
+
+@keyframes l5 {
+  to {
+    clip-path: inset(0 -1ch 0 0);
   }
 }
 

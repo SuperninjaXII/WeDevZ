@@ -6,12 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>web dev z</title>
   <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <style>
+    .hide {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
+  <div id="loadingOverlay">
+    <div class="loader"></div>
+  </div>
   <div class="mood-overlay"></div>
   <section class="loading-screen">
-    <video class="big-screen" autoplay src="videos/intro.webm"></video>
+    <video class="big-screen" muted autoplay src="videos/intro.webm"></video>
 
     <section class="screens">
       <div class="first">
@@ -29,7 +39,17 @@
 
   </section>
   <div class="sub">
-    <p></p>
+    <p> sound
+      <span id="Officon" class="material-symbols-outlined">
+        volume_off
+      </span>
+      <span id="Onicon" class="hide material-symbols-outlined ">
+        volume_up
+      </span>
+      <audio id="sound" src="videos/intro_02-09-24_00-16-14-400_53_65.opus">
+
+      </audio>
+    </p>
   </div>
   <section onclick="moveUp(this)" class="warning">
 
